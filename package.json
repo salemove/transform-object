@@ -1,0 +1,32 @@
+{
+  "name": "@salemove/transform-object",
+  "version": "1.0.0",
+  "description": "",
+  "module": "dist/client-logger.esm.js",
+  "browser": "dist/client-logger.umd.js",
+  "main": "src/transform-object.js",
+  "author": "Glia TechMovers",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha",
+    "build": "rollup -c",
+    "lint": "eslint --cache . && prettier --list-different '**/*.js'",
+    "format": "prettier --write --loglevel=warn '**/*.js' && eslint --cache --fix ."
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/register": "^7.12.1",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-compat": "^3.8.0",
+    "eslint-plugin-mocha": "^8.0.0",
+    "mocha": "^8.2.1",
+    "prettier": "^2.1.2",
+    "rollup": "^2.33.3"
+  }
+}
