@@ -143,16 +143,16 @@ var camelizeAllKeysDeep = curry1(function (obj) {
  *
  * Example:
  *
- *   camelizeKeys(['user_name'], {user_name: 'John});
+ *   camelizeKeysDeep(['user_name'], {user_name: 'John});
  *     // => {userName: 'John'}
  *
  * Example with nested object:
  *
- *   camelizeKeys(['target_user'], {target_user: {target_name: 'John'}});
+ *   camelizeKeysDeep(['target_user'], {target_user: {target_name: 'John'}});
  *     // => {targetUser: {targetName: 'John'}}
  */
 
-var camelizeKeys = curry2(function (keysToCamelize, obj) {
+var camelizeKeysDeep = curry2(function (keysToCamelize, obj) {
   return Object.keys(obj).reduce(function (acc, key) {
     var shouldCamelize = keysToCamelize.includes(key);
     var newKey = shouldCamelize ? camelize(key) : key;
@@ -208,16 +208,16 @@ var snakifyAllKeysDeep = curry1(function (keysToSnakify) {
  *
  * Example:
  *
- *   snakifyKeys(['user_name'], {userName: 'John});
+ *   snakifyKeysDeep(['user_name'], {userName: 'John});
  *     // => {user_name: 'John'}
  *
  * Example with nested object:
  *
- *   snakifyKeys(['targetUser'], {targetUser: {targetName: 'John'}});
+ *   snakifyKeysDeep(['targetUser'], {targetUser: {targetName: 'John'}});
  *     // => {target_user: {target_name: 'John'}}
  */
 
-var snakifyKeys = curry2(function (keysToSnakify, obj) {
+var snakifyKeysDeep = curry2(function (keysToSnakify, obj) {
   return Object.keys(obj).reduce(function (acc, key) {
     var shouldSnakify = keysToSnakify.includes(key);
     var newKey = shouldSnakify ? snakify(key) : key;
@@ -269,4 +269,4 @@ var renameKeys = curry2(function (keysMap, obj) {
   }, {});
 });
 
-export { camelizeAllKeys, camelizeAllKeysDeep, camelizeKeys, renameKeys, snakifyAllKeys, snakifyAllKeysDeep, snakifyKeys };
+export { camelizeAllKeys, camelizeAllKeysDeep, camelizeKeysDeep, renameKeys, snakifyAllKeys, snakifyAllKeysDeep, snakifyKeysDeep };
