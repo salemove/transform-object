@@ -85,15 +85,15 @@ export const camelizeAllKeysDeep = curry1(obj => {
  *
  * Example:
  *
- *   camelizeKeys(['user_name'], {user_name: 'John});
+ *   camelizeKeysDeep(['user_name'], {user_name: 'John});
  *     // => {userName: 'John'}
  *
  * Example with nested object:
  *
- *   camelizeKeys(['target_user'], {target_user: {target_name: 'John'}});
+ *   camelizeKeysDeep(['target_user'], {target_user: {target_name: 'John'}});
  *     // => {targetUser: {targetName: 'John'}}
  */
-export const camelizeKeys = curry2((keysToCamelize, obj) =>
+export const camelizeKeysDeep = curry2((keysToCamelize, obj) =>
   Object.keys(obj).reduce((acc, key) => {
     const shouldCamelize = keysToCamelize.includes(key);
     const newKey = shouldCamelize ? camelize(key) : key;
@@ -146,15 +146,15 @@ export const snakifyAllKeysDeep = curry1(keysToSnakify => {
  *
  * Example:
  *
- *   snakifyKeys(['user_name'], {userName: 'John});
+ *   snakifyKeysDeep(['user_name'], {userName: 'John});
  *     // => {user_name: 'John'}
  *
  * Example with nested object:
  *
- *   snakifyKeys(['targetUser'], {targetUser: {targetName: 'John'}});
+ *   snakifyKeysDeep(['targetUser'], {targetUser: {targetName: 'John'}});
  *     // => {target_user: {target_name: 'John'}}
  */
-export const snakifyKeys = curry2((keysToSnakify, obj) =>
+export const snakifyKeysDeep = curry2((keysToSnakify, obj) =>
   Object.keys(obj).reduce((acc, key) => {
     const shouldSnakify = keysToSnakify.includes(key);
     const newKey = shouldSnakify ? snakify(key) : key;
