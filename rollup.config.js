@@ -14,3 +14,5 @@ export default [
     plugins: [babel({babelHelpers: 'bundled'}), resolve()]
   }
 ];
+
+// 2kki main muudatusest piisab??? vaata kas site-dashboard saab ilma special requireita hakkama
