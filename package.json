@@ -1,6 +1,6 @@
 {
   "name": "@salemove/transform-object",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "module": "dist/transform-object.esm.js",
   "browser": "dist/transform-object.umd.js",
