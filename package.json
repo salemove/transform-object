@@ -4,9 +4,14 @@
   "description": "",
   "module": "dist/transform-object.esm.js",
   "browser": "dist/transform-object.umd.js",
-  "main": "src/transform-object.js",
+  "main": "dist/transform-object.umd.js",
   "author": "Glia TechMovers",
   "license": "MIT",
+  "browserslist": {
+    "ie": ">= 11",
+    "chrome": "last 5 versions",
+    "firefox": "last 5 versions"
+  },
   "scripts": {
     "test": "mocha",
     "build": "rollup -c",
