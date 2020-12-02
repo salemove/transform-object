@@ -21,4 +21,16 @@ describe('camelizeAllKeys', () => {
 
     expect(camelizeAllKeys(obj)).to.eql(expectedResponse);
   });
+
+  it('ignores null', () => {
+    expect(camelizeAllKeys(null)).to.eql(null);
+  });
+
+  it('ignores undefined', () => {
+    expect(camelizeAllKeys(undefined)).to.eql(undefined);
+  });
+
+  it('ignores string', () => {
+    expect(camelizeAllKeys('some')).to.eql('some');
+  });
 });

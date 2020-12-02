@@ -10,10 +10,12 @@ describe('snakifyKeysDeep', () => {
   });
 
   it('renames nested keys', () => {
-    expect(snakifyKeysDeep(['targetUser'], {targetUser: {targetName: 'John'}, userAge: 21})).to.eql({
-      target_user: {target_name: 'John'},
-      userAge: 21
-    });
+    expect(snakifyKeysDeep(['targetUser'], {targetUser: {targetName: 'John'}, userAge: 21})).to.eql(
+      {
+        target_user: {target_name: 'John'},
+        userAge: 21
+      }
+    );
   });
 
   it('does not camelizes not listed keys and their children', () => {

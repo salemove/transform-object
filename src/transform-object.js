@@ -50,9 +50,11 @@ const snakify = str =>
  *   camelizeAllKeys({target_user: {target_name: 'John'}});
  *     // => {targetUser: {target_name: 'John'}}
  */
-export const camelizeAllKeys = curry1(obj =>
-  Object.keys(obj).reduce((acc, key) => assoc(camelize(key), obj[key], acc), {})
-);
+export const camelizeAllKeys = curry1(obj => {
+  if (obj === null || typeof obj !== 'object') return obj;
+
+  return Object.keys(obj).reduce((acc, key) => assoc(camelize(key), obj[key], acc), {});
+});
 
 /**
  * Creates a new object with all the keys changed to camelcase.
@@ -111,9 +113,11 @@ export const camelizeKeysDeep = curry2((keysToCamelize, obj) =>
  *   snakifyAllKeys({targetUser: {targetName: 'John'}});
  *     // => {target_user: {targetName: 'John'}}
  */
-export const snakifyAllKeys = curry1(obj =>
-  Object.keys(obj).reduce((acc, key) => assoc(snakify(key), obj[key], acc), {})
-);
+export const snakifyAllKeys = curry1(obj => {
+  if (obj === null || typeof obj !== 'object') return obj;
+
+  return Object.keys(obj).reduce((acc, key) => assoc(snakify(key), obj[key], acc), {});
+});
 
 /**
  * Creates a new object with all the keys changed to snakecase.

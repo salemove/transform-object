@@ -21,4 +21,16 @@ describe('snakifyAllKeys', () => {
 
     expect(snakifyAllKeys(obj)).to.eql(expectedResponse);
   });
+
+  it('ignores null', () => {
+    expect(snakifyAllKeys(null)).to.eql(null);
+  });
+
+  it('ignores undefined', () => {
+    expect(snakifyAllKeys(undefined)).to.eql(undefined);
+  });
+
+  it('ignores string', () => {
+    expect(snakifyAllKeys('some')).to.eql('some');
+  });
 });

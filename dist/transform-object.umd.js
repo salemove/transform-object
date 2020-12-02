@@ -112,6 +112,7 @@
 
 
   var camelizeAllKeys = curry1(function (obj) {
+    if (obj === null || _typeof(obj) !== 'object') return obj;
     return Object.keys(obj).reduce(function (acc, key) {
       return assoc(camelize(key), obj[key], acc);
     }, {});
@@ -177,6 +178,7 @@
    */
 
   var snakifyAllKeys = curry1(function (obj) {
+    if (obj === null || _typeof(obj) !== 'object') return obj;
     return Object.keys(obj).reduce(function (acc, key) {
       return assoc(snakify(key), obj[key], acc);
     }, {});
