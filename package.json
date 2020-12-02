@@ -14,6 +14,7 @@
   },
   "scripts": {
     "test": "mocha",
+    "pretest": "npm run format",
     "build": "rollup -c",
     "lint": "eslint --cache . && prettier --list-different '**/*.js'",
     "format": "prettier --write --loglevel=warn '**/*.js' && eslint --cache --fix ."
