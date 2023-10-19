@@ -8,6 +8,13 @@
   "author": "Glia TechMovers",
   "license": "MIT",
   "prettier": "@salemove/prettier-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salemove/transform-object.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "browserslist": {
     "ie": ">= 11",
     "chrome": "last 5 versions",
